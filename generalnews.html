@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html ng-app='MyNewsApp'>
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+  <script src="generalnews.js"></script>
+  <script src="events.js"></script>
+    <title> The Daily News App </title>
+</head>
+
+<body ng-controller='NewsController as news' id="body">
+
+  <nav class="navbar navbar-expand-lg navbar-light" id="heading">
+    <a class="navbar-brand" href="generalnews.html"><b><i>The Daily News App</i></b></a>
+  </nav>
+<br>
+  <div>
+  <p id ="text1"> Welcome to The Daily News!. If you missed something today and want to have an idea about the world then there you go with the latest feed!.</p>
+  </div>
+
+  <nav class="breadcrumb" id="breadcrumb">
+    <a class="breadcrumb-item active" href="generalnews.html" id="breadcrumb1">General</a>
+    <a class="breadcrumb-item" href="businessnews.html" id="breadcrumb2">Business</a>
+    <a class="breadcrumb-item" href="geographicnews.html" id="breadcrumb3">Geographic</a>
+    <a class="breadcrumb-item" href="sportsnews.html" id="breadcrumb4">Sports</a>
+    <a class="breadcrumb-item" href="technologynews.html" id="breadcrumb5">Technology</a>
+  </nav>
+
+<ul>
+<li ng-repeat="latest in news.newsData">
+  <div id="title">{{latest.title}} </div> <br>
+  <div><img src="{{latest.urlToImage}}" id="image"></div> <br>
+  <div id="description">{{latest.description}}</div>  <br>
+  <div id="link"> To read more, Please click the link: <a href="{{latest.url}}" target="_blank"> {{latest.url}}</a></div> <br> <br>
+</li>
+</ul>
+
+<footer class="footer">
+  <div class="container">
+    <div class="row">
+            <p id="copyright"> Copyright &copy; The Daily News App</p>
+        </div>
+    </div>
+</body>
+</html>
